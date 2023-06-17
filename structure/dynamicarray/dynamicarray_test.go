@@ -95,3 +95,240 @@ func TestDynamicArray(t *testing.T) {
 	})
 
 }
+
+func TestDynamicArray_Add(t *testing.T) {
+	type fields struct {
+		Size        int
+		Capacity    int
+		ElementData []any
+	}
+	type args struct {
+		element any
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		args   args
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			da := &DynamicArray{
+				Size:        tt.fields.Size,
+				Capacity:    tt.fields.Capacity,
+				ElementData: tt.fields.ElementData,
+			}
+			da.Add(tt.args.element)
+		})
+	}
+}
+
+func TestDynamicArray_CheckRangeFromIndex(t *testing.T) {
+	type fields struct {
+		Size        int
+		Capacity    int
+		ElementData []any
+	}
+	type args struct {
+		index int
+	}
+	tests := []struct {
+		name    string
+		fields  fields
+		args    args
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			da := &DynamicArray{
+				Size:        tt.fields.Size,
+				Capacity:    tt.fields.Capacity,
+				ElementData: tt.fields.ElementData,
+			}
+			if err := da.CheckRangeFromIndex(tt.args.index); (err != nil) != tt.wantErr {
+				t.Errorf("CheckRangeFromIndex() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}
+
+func TestDynamicArray_Get(t *testing.T) {
+	type fields struct {
+		Size        int
+		Capacity    int
+		ElementData []any
+	}
+	type args struct {
+		index int
+	}
+	tests := []struct {
+		name    string
+		fields  fields
+		args    args
+		want    any
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			da := &DynamicArray{
+				Size:        tt.fields.Size,
+				Capacity:    tt.fields.Capacity,
+				ElementData: tt.fields.ElementData,
+			}
+			got, err := da.Get(tt.args.index)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("Get() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("Get() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestDynamicArray_GetData(t *testing.T) {
+	type fields struct {
+		Size        int
+		Capacity    int
+		ElementData []any
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   []any
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			da := &DynamicArray{
+				Size:        tt.fields.Size,
+				Capacity:    tt.fields.Capacity,
+				ElementData: tt.fields.ElementData,
+			}
+			if got := da.GetData(); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("GetData() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestDynamicArray_IsEmpty(t *testing.T) {
+	type fields struct {
+		Size        int
+		Capacity    int
+		ElementData []any
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			da := &DynamicArray{
+				Size:        tt.fields.Size,
+				Capacity:    tt.fields.Capacity,
+				ElementData: tt.fields.ElementData,
+			}
+			if got := da.IsEmpty(); got != tt.want {
+				t.Errorf("IsEmpty() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestDynamicArray_NewCapacity(t *testing.T) {
+	type fields struct {
+		Size        int
+		Capacity    int
+		ElementData []any
+	}
+	tests := []struct {
+		name   string
+		fields fields
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			da := &DynamicArray{
+				Size:        tt.fields.Size,
+				Capacity:    tt.fields.Capacity,
+				ElementData: tt.fields.ElementData,
+			}
+			da.NewCapacity()
+		})
+	}
+}
+
+func TestDynamicArray_Put(t *testing.T) {
+	type fields struct {
+		Size        int
+		Capacity    int
+		ElementData []any
+	}
+	type args struct {
+		index   int
+		element any
+	}
+	tests := []struct {
+		name    string
+		fields  fields
+		args    args
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			da := &DynamicArray{
+				Size:        tt.fields.Size,
+				Capacity:    tt.fields.Capacity,
+				ElementData: tt.fields.ElementData,
+			}
+			if err := da.Put(tt.args.index, tt.args.element); (err != nil) != tt.wantErr {
+				t.Errorf("Put() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}
+
+func TestDynamicArray_Remove(t *testing.T) {
+	type fields struct {
+		Size        int
+		Capacity    int
+		ElementData []any
+	}
+	type args struct {
+		index int
+	}
+	tests := []struct {
+		name    string
+		fields  fields
+		args    args
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			da := &DynamicArray{
+				Size:        tt.fields.Size,
+				Capacity:    tt.fields.Capacity,
+				ElementData: tt.fields.ElementData,
+			}
+			if err := da.Remove(tt.args.index); (err != nil) != tt.wantErr {
+				t.Errorf("Remove() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}
