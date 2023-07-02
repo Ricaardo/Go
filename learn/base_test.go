@@ -21,3 +21,9 @@ func TestMultiply(t *testing.T) {
 		t.Error("Test failed")
 	}
 }
+
+func TestDivide(t *testing.T) {
+	if divide(1, 2) != 0 {
+		t.Error("Test failed")
+	}
+}
